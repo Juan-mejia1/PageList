@@ -25,7 +25,18 @@
             <p class="porcentaje"><span id="porcentaje">0</span>% completado</p>
         </section>
 
+        <!--Formulario para agregar tareas -->  
 
+        <form id="formulario" class="formulario">
+            <input type="text" id="campo-tarea" placeholder="Escribe una tarea...">
+            <button type="submit" class="btn-agregar">Agregar Tarea</button>
+        </form>
+
+        <!--Mensaje para cuando intenten agragar una tarea vacia-->
+        <p id="mensaje-error" class="mensaje-error"></p>
+
+        <!--aquí se agregará un li por cada tarea-->
+        <lu id="lista-tareas" class="lista"></lu>
     </main>
     
 </body>
