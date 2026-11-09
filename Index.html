@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de tareas</title>
     <script src="app.js" defer></script>
 </head>
 <body>
+
+    <main class="app">
+        <h1>Lista de Tareas</h1>
+
+        <!--Contador-->
+        <section class="contador">
+            <p>Total de tareas: <strong id="total">0</strong></p>
+            <p>Completadas: <strong id="completadas">0</strong></p>
+            <p>Pendientes: <strong id="pendientes">0</strong></p>
+
+            
+        <!--*Barra de progreso: JavaScrip cambia el ancho de la barra-->
+            <div class="barra">
+                <div class="barra-progreso" id="barra-progreso"></div>
+            </div>
+            <p class="porcentaje"><span id="porcentaje">0</span>% completado</p>
+        </section>
+
+
+    </main>
     
 </body>
 </html>
