@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tareas</title>
-    <script src="app.js" defer></script>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Fuente inportada de google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main class="app">
-        <h1>Lista de Tareas</h1>
+        <h1 class="titulo">LISTA DE TAREAS</h1>
 
-        <!--Contador-->
+        <!--CONTADOR-->
         <section class="contador">
+
+            <div class="estadisticas">
             <p>Total de tareas: <strong id="total">0</strong></p>
             <p>Completadas: <strong id="completadas">0</strong></p>
             <p>Pendientes: <strong id="pendientes">0</strong></p>
-
-            
-        <!--*Barra de progreso: JavaScrip cambia el ancho de la barra-->
-            <div class="barra">
-                <div class="barra-progreso" id="barra-progreso"></div>
             </div>
-            <p class="porcentaje"><span id="porcentaje">0</span>% completado</p>
+
+        <!--*Barra de progreso: JavaScrip cambia el ancho de la barra-->
+            <div class="progreso">
+                <div class="barra">
+                <div class="barra-progreso" id="barra-progreso"></div>
+                </div>
+                <p class="porcentaje"><span id="porcentaje">0</span>% completado</p>
+            </div>
         </section>
 
-        <!--Formulario para agregar tareas -->  
-
+        <!--FORMULARIO PARA AGREGAR TAREAS -->  
         <form id="formulario" class="formulario">
             <input type="text" id="campo-tarea" placeholder="Escribe una tarea...">
             <button type="submit" class="btn-agregar">Agregar Tarea</button>
@@ -35,8 +44,10 @@
         <!--Mensaje para cuando intenten agragar una tarea vacia-->
         <p id="mensaje-error" class="mensaje-error"></p>
 
+        <h2 class="subtitulo">Tu lista:</h2>
+
         <!--aquí se agregará un li por cada tarea-->
-        <lu id="lista-tareas" class="lista"></lu>
+        <ul id="lista-tareas" class="lista"></ul>
     </main>
     
 </body>
