@@ -72,4 +72,50 @@ formulario.addEventListener("submit",function(evento){
 
 actualizarContador();
 
+/// CREAR TAREA EN LA LISTA // 
+
+function crearTarea(texto){
+    const li = document.createElement("li") //crea la tarea en la lsita
+    li.classList.add("tarea") //le añade la clase tarea
+
+    //MUESTRA LA TAREA EN LA LISTA
+    const spanTexto = document.createElement("span")// crea un span
+    spanTexto.classList.add("texto") //se le agrega la clase texto al span
+    spanTexto.textContent = texto; //agrega el texto de la tarea
+
+    //BOTON DE COMPLETAR
+    const btnCompletar = document.createElement("button"); //Crea el boton de completar tarea
+    btnCompletar.classList.add("btn-completar") // le añade la clase de html
+    btnCompletar.textContent = "completar"
+
+    //BOTON DE ELIMINAR
+    const btnEliminar = document.createElement("button")
+    btnEliminar.classList.add("btn-Eliminar");
+    btnEliminar.textContent = "Eliminar";
+
+
+    //EVENTOS
+
+    //cuando haga click en completar
+
+    btnCompletar.addEventListener("click" , function(){
+        li.classList.add("completada"); //le agrega la clae encargada de tachar y cambiar el color de la tarea
+
+        btnCompletar.disabled = true; //deshabilitamos el boton
+        actualizarContador();// llamamos al contador para que se actualice
+    });
+
+    btnEliminar.addEventListener("click",function(){
+    li.remove(); //quita la tarea de la lista
+    actualizarContador();
+    });
+
+
+    //agregamos los 3 elemnetos a la lista: la tarea y los dos botones
+
+    li.append(spanTexto, btnCompletar, btnEliminar);
+
+    return li;
+}
+
 
