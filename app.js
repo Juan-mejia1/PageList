@@ -41,3 +41,35 @@ function actualizarContador(){
     barraProgreso.style.width = porcentaje +"%"; //toma el numero del porcentaje y cmabia el ancho de la barra
 
 }
+
+// AGREGAR LAS TAREAS
+
+//evento que ocurre al precionar el boton de agregar
+formulario.addEventListener("submit",function(evento){
+    //por defecto se recarga la página al momento de mandar los datos
+    evento.preventDefault(); // evitamos que esto pase deshabilidando el evento por defecto
+
+
+    const texto = campoTarea.value.trim();//con trim quitamos los espacios al inicio y al final de la tarea
+
+    //VALIDACIÓN DE TAREA VACIA
+    
+    if (texto ===""){
+        mensajeError.textContent ="Debes escribir una tarea";
+        return; // salimos de la funcion y no se agrega nada a la lista
+    }
+
+    mensajeError.textContent =""; //para que no aparezcan varios mensajes limpiamos el error
+    const nuevaTarea = crearTarea(texto)//llamamos la funcion crear tarea y el parametro es el texto que ingresamos
+    listaTareas.appendChild(nuevaTarea) //la mostramos en la lista
+
+    campoTarea.value=""; //vaciamos el campo
+    campoTarea.focus(); //dejamos el foco para una nueva tarea
+
+    actualizarContador();
+
+});
+
+actualizarContador();
+
+
