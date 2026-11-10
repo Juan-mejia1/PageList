@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: darkgrey;
+}
+
+.app{
+    margin: 0px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-family: 'oswald', sans-serif;
+    margin: 0;
+}
+
+.contador{
+    font-family: 'oswald', sans-serif;
+    background-color: #ffff;
+    border-radius: 20px;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.estadisticas{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    gap: 10px;
+}
+
+.estadisticas p{
+    background-color: darkgray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.barra{
+    height: 10px;
+    background: #ffff;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.barra-progreso{
+    height: 100%;
+    width: 0%; /*en javaScrip cambia este valor*/
+    transition: width 0.3s;
+    background-color: blue;
+}
